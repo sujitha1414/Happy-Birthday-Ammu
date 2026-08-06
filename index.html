@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Ammu ❤️</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ffb6d9,#ffd6e8,#fff5f8);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+overflow:hidden;
+}
+
+.container{
+width:90%;
+max-width:380px;
+background:#fff;
+padding:25px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,.2);
+animation:fade 1.5s;
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+h1{
+color:#ff1493;
+font-size:32px;
+margin-bottom:10px;
+}
+
+h2{
+color:#ff69b4;
+margin-bottom:15px;
+}
+
+.photo{
+width:220px;
+height:220px;
+border-radius:50%;
+border:5px solid pink;
+object-fit:cover;
+}
+
+button{
+margin-top:20px;
+padding:12px 25px;
+font-size:18px;
+background:#ff1493;
+color:white;
+border:none;
+border-radius:30px;
+cursor:pointer;
+}
+
+button:hover{
+background:#ff4da6;
+}
+
+#message{
+display:none;
+margin-top:20px;
+font-size:18px;
+line-height:1.8;
+color:#444;
+}
+.heart{
+    position:fixed;
+    color:#ff69b4;
+    font-size:25px;
+    animation:float 6s linear infinite;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(100vh);
+        opacity:0;
+    }
+    100%{
+        transform:translateY(-100px);
+        opacity:1;
+    }
+}
+.balloon{
+position:fixed;
+bottom:-100px;
+font-size:40px;
+animation:balloon 8s linear infinite;
+}
+
+@keyframes balloon{
+0%{
+transform:translateY(0);
+opacity:1;
+}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+
+</style>
+
+</head>
+
+<body>
+  <audio id="bgMusic" autoplay loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+
+<h1>🎂 Happy Birthday 🎂</h1>
+
+<h2>Dear Ammu 💖</h2>
+
+<img src="photo1.jpg" class="photo">
+
+<button onclick="showMessage()">
+💌 Open Surprise
+</button>
+
+<div id="message">
+  <p>
+
+Happy Birthday Ammu! ❤️🎂
+
+Innaiku un special day.
+
+Nee en life la vandhadhu enakku romba periya gift.
+
+Un smile eppovum ippadiye irukanum.
+
+Un dreams ellam kandippa nijamaaganum.
+
+Life la evlo kashtam vandhalum strong ah iru.
+
+Thank you for every smile, every support, and every beautiful memory.
+
+Namma friendship eppovum ippadiye irukanum. 🤍
+
+Once Again...
+
+🎂 Happy Birthday Ammu ❤️
+<br><br>
+With Love ❤️<br>
+<b>Savi</b>
+
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+function showMessage(){
+
+document.getElementById("message").style.display="block";
+
+document.getElementById("bgMusic").play();
+
+}
+// Floating Hearts
+setInterval(function(){
+
+let heart=document.createElement("div");
+
+heart.innerHTML="💖";
+
+heart.className="heart";
+
+heart.style.left=Math.random()*100+"vw";
+
+heart.style.fontSize=(20+Math.random()*20)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+
+},500);
+
+// Photo Slideshow
+
+const photos=[
+"photo1.jpg",
+"photo2.jpg",
+"photo3.jpg",
+"photo4.jpg",
+"photo5.jpg"
+];
+
+let i=0;
+
+setInterval(function(){
+
+i++;
+
+if(i>=photos.length){
+i=0;
+}
+
+document.querySelector(".photo").src=photos[i];
+
+},3000);
+// Floating Balloons
+const balloons=["🎈","🎈","🎈","🎈"];
+
+setInterval(function(){
+
+let b=document.createElement("div");
+
+b.className="balloon";
+
+b.innerHTML=balloons[Math.floor(Math.random()*balloons.length)];
+
+b.style.left=Math.random()*100+"vw";
+
+document.body.appendChild(b);
+
+setTimeout(function(){
+b.remove();
+},8000);
+
+},1500);
+
+</script>
+
+</body>
+
+</html>
